@@ -1,0 +1,30 @@
+application: veolia-mega-demo
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /static
+  static_dir: static
+
+- url: /update
+  script: main.application
+  login: admin
+  secure: always
+
+- url: /refreshDomains
+  script: main.application
+  login: admin
+  secure: always
+
+- url: /.*
+  script: main.application
+  login: required
+  secure: always
+
+
+libraries:
+- name: django
+  version: latest

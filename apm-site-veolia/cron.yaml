@@ -1,0 +1,4 @@
+cron:
+- description: Update the list of domains
+  url: /refreshDomains
+  schedule: every 6 hours
